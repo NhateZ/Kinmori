@@ -128,6 +128,7 @@
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxEmail);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "Login";
             Text = "Log in";
             Load += LogIn_Load;
