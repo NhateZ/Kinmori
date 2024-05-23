@@ -28,18 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            buttonJoin = new Button();
+            buttonCreator = new Button();
             SuspendLayout();
+            // 
+            // buttonJoin
+            // 
+            buttonJoin.Location = new Point(27, 39);
+            buttonJoin.Name = "buttonJoin";
+            buttonJoin.Size = new Size(131, 37);
+            buttonJoin.TabIndex = 0;
+            buttonJoin.Text = "Lesson code";
+            buttonJoin.UseVisualStyleBackColor = true;
+            buttonJoin.Click += buttonJoin_Click;
+            // 
+            // buttonCreator
+            // 
+            buttonCreator.Location = new Point(164, 39);
+            buttonCreator.Name = "buttonCreator";
+            buttonCreator.Size = new Size(131, 37);
+            buttonCreator.TabIndex = 1;
+            buttonCreator.Text = "Lesson creator";
+            buttonCreator.UseVisualStyleBackColor = true;
+            buttonCreator.Click += buttonCreator_Click;
             // 
             // LessonMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(329, 103);
+            Controls.Add(buttonCreator);
+            Controls.Add(buttonJoin);
+            Cursor = Cursors.Default;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "LessonMenu";
             Text = "Kinmori - Lesson Menu";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Button buttonJoin;
+        private Button buttonCreator;
     }
 }

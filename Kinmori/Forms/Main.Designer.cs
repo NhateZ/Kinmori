@@ -62,6 +62,8 @@
             ClientSize = new Size(393, 111);
             Controls.Add(buttonQuiz);
             Controls.Add(buttonLessons);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "Main";
             Text = "Kinmori";
             ResumeLayout(false);

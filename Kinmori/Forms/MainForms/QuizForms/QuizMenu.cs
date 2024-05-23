@@ -16,5 +16,21 @@ namespace Kinmori.Forms.MainForms.QuizForms
         {
             InitializeComponent();
         }
+
+        private void buttonCreator_Click(object sender, EventArgs e)
+        {
+            QuizCreator form = new QuizCreator();
+            form.Icon = this.Icon;
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void buttonJoin_Click(object sender, EventArgs e)
+        {
+            QuizCode form = new QuizCode();
+            form.Icon = this.Icon;
+            form.ShowDialog();
+            this.Close();
+        }
     }
 }

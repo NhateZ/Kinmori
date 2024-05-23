@@ -71,7 +71,7 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
         {
             try
             {
-                int line = int.Parse(textBoxAddB.Text);
+                UInt128 line = UInt128.Parse(textBoxAddB.Text);
                 string _command = $"b {line}";
                 commands.Add(new command(_command));
             }
@@ -85,7 +85,7 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
         {
             try
             {
-                int line = int.Parse(textBoxRemoveB.Text);
+                UInt128 line = UInt128.Parse(textBoxRemoveB.Text);
                 string _command = $"d {line}";
                 commands.Add(new command(_command));
             }
@@ -97,12 +97,19 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
 
         private void buttonAddVariable_Click(object sender, EventArgs e)
         {
-            string _command = $"{printingSystem[comboBoxTypeSelector.SelectedIndex]} ";
+            string _command = $"{printingSystem[comboBoxTypeSelector.SelectedIndex]}";
+            if (comboBoxTypeSelector.SelectedIndex >= 2 && comboBoxTypeSelector.SelectedIndex <= 4)
+            {
+                _command += " int";
+            }
+            if (comboBoxTypeSelector.SelectedIndex == 3)
+            {
+                _command += " int";
+            }
         }
         private void buttonUpload_Click(object sender, EventArgs e)
         {
-            // To Implement
-            throw new NotImplementedException();
+
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
@@ -112,36 +119,7 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
 
         private void comboBoxTypeSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*if (comboBoxTypeSelector.SelectedIndex == 2 || comboBoxTypeSelector.SelectedIndex == 3 || comboBoxTypeSelector.SelectedIndex == 4)
-            {
-                label4.Enabled = true;
-                textBoxFirstType.Enabled = true;
-                label4.Visible = true;
-                textBoxFirstType.Visible = true;
-            }
-            else
-            {
-                label4.Enabled = false;
-                textBoxFirstType.Enabled = false;
-                label4.Visible = false;
-                textBoxFirstType.Visible = false;
-                textBoxFirstType.Text = string.Empty;
-            }
-            if (comboBoxTypeSelector.SelectedIndex == 3)
-            {
-                label5.Enabled = true;
-                textBoxSecondType.Enabled = true;
-                label5.Visible = true;
-                textBoxSecondType.Visible = true;
-            }
-            else
-            {
-                label5.Enabled = false;
-                textBoxSecondType.Enabled = false;
-                label5.Visible = false;
-                textBoxSecondType.Visible = false;
-                textBoxSecondType.Text = string.Empty;
-            }*/
+            ;
         }
     }
 }

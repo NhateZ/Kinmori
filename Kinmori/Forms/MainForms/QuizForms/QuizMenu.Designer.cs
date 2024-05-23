@@ -28,18 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            buttonCreator = new Button();
+            buttonJoin = new Button();
             SuspendLayout();
+            // 
+            // buttonCreator
+            // 
+            buttonCreator.Location = new Point(200, 48);
+            buttonCreator.Name = "buttonCreator";
+            buttonCreator.Size = new Size(131, 37);
+            buttonCreator.TabIndex = 3;
+            buttonCreator.Text = "Quiz creator";
+            buttonCreator.UseVisualStyleBackColor = true;
+            buttonCreator.Click += buttonCreator_Click;
+            // 
+            // buttonJoin
+            // 
+            buttonJoin.Location = new Point(63, 48);
+            buttonJoin.Name = "buttonJoin";
+            buttonJoin.Size = new Size(131, 37);
+            buttonJoin.TabIndex = 2;
+            buttonJoin.Text = "Quiz code";
+            buttonJoin.UseVisualStyleBackColor = true;
+            buttonJoin.Click += buttonJoin_Click;
             // 
             // QuizMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(395, 132);
+            Controls.Add(buttonCreator);
+            Controls.Add(buttonJoin);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "QuizMenu";
             Text = "Kinmori - QuizMenu";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Button buttonCreator;
+        private Button buttonJoin;
     }
 }

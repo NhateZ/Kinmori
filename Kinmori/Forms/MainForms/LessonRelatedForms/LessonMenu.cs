@@ -15,9 +15,24 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
         public LessonMenu()
         {
             InitializeComponent();
-            LessonCreator creator = new LessonCreator();
+        }
+
+        private void buttonJoin_Click(object sender, EventArgs e)
+        {
+            LessonCode form = new LessonCode();
+            form.Icon = this.Icon;
             this.Hide();
-            creator.ShowDialog();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void buttonCreator_Click(object sender, EventArgs e)
+        {
+            LessonCreator form = new LessonCreator();
+            form.Icon = this.Icon;
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
     }
 }

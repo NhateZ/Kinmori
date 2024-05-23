@@ -77,7 +77,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             Name = "Lesson";
-            Text = "Lesson";
+            Text = "Kinmori - Lesson";
             ResumeLayout(false);
             PerformLayout();
         }

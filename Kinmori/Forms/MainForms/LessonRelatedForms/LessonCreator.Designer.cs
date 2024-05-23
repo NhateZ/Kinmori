@@ -290,6 +290,7 @@
             Controls.Add(textBoxCode);
             Controls.Add(checkBox1);
             Controls.Add(textBoxLesson);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             Name = "LessonCreator";
             Text = "Kinmori - LessonCreator";
