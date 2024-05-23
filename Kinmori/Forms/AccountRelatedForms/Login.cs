@@ -13,6 +13,7 @@ namespace Kinmori
         {
             InitializeComponent();
             languageSelector.SelectedIndex = 0;
+            languageSelector.Visible = false;
         }
 
         private Tuple<Int16, Int16, string>[] texts = new Tuple<Int16, Int16, string>[]
@@ -89,6 +90,7 @@ namespace Kinmori
                     var userCredential = await client.SignInWithEmailAndPasswordAsync(email, password);
                     Main form = new Main(languageSelector.SelectedIndex, false);
                     form.ShowDialog();
+                    string username = userCredential.User.ToString();
                     this.Close();
                 }
                 catch

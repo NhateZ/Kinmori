@@ -130,7 +130,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             Name = "Login";
-            Text = "Log in";
+            Text = "Kinmori - Log in";
             Load += LogIn_Load;
             ResumeLayout(false);
             PerformLayout();

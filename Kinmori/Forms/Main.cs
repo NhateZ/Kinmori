@@ -20,5 +20,15 @@ namespace Kinmori.Forms
             this.isGuest = isGuest;
             this.languageSelectorIndex = languageSelectorIndex;
         }
+
+        private void buttonLessons_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonQuiz_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

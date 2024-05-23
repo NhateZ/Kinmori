@@ -28,12 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Main";
+            buttonLessons = new Button();
+            buttonQuiz = new Button();
+            SuspendLayout();
+            // 
+            // buttonLessons
+            // 
+            buttonLessons.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonLessons.Location = new Point(72, 42);
+            buttonLessons.Name = "buttonLessons";
+            buttonLessons.Size = new Size(93, 34);
+            buttonLessons.TabIndex = 0;
+            buttonLessons.Text = "Lessons";
+            buttonLessons.UseVisualStyleBackColor = true;
+            buttonLessons.Click += buttonLessons_Click;
+            // 
+            // buttonQuiz
+            // 
+            buttonQuiz.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonQuiz.Location = new Point(226, 42);
+            buttonQuiz.Name = "buttonQuiz";
+            buttonQuiz.Size = new Size(93, 34);
+            buttonQuiz.TabIndex = 1;
+            buttonQuiz.Text = "Quiz";
+            buttonQuiz.UseVisualStyleBackColor = true;
+            buttonQuiz.Click += buttonQuiz_Click;
+            // 
+            // Main
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(393, 111);
+            Controls.Add(buttonQuiz);
+            Controls.Add(buttonLessons);
+            Name = "Main";
+            Text = "Kinmori";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button buttonLessons;
+        private Button buttonQuiz;
     }
 }

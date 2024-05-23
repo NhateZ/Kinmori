@@ -116,7 +116,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             Name = "Signup";
-            Text = "Sign up";
+            Text = "Kinmori - Sign up";
             ResumeLayout(false);
             PerformLayout();
         }
