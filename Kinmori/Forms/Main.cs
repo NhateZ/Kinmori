@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Kinmori.Forms.MainForms.LessonRelatedForms;
+using Kinmori.Forms.MainForms.QuizForms
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,12 +25,20 @@ namespace Kinmori.Forms
 
         private void buttonLessons_Click(object sender, EventArgs e)
         {
-
+            LessonMenu lessonMenu = new LessonMenu();
+            lessonMenu.Icon = this.Icon;
+            this.Hide();
+            lessonMenu.ShowDialog();
+            this.Show();
         }
 
         private void buttonQuiz_Click(object sender, EventArgs e)
         {
-
+            QuizMenu quizMenu = new QuizMenu();
+            quizMenu.Icon = this.Icon;
+            this.Hide();
+            quizMenu.ShowDialog();
+            this.Show();
         }
     }
 }

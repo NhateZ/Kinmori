@@ -16,7 +16,6 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
         {
             InitializeComponent();
         }
-
         private void buttonQuit_Click(object sender, EventArgs e)
         {
             this.Close();
