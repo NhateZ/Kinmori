@@ -1,5 +1,5 @@
 ﻿using Kinmori.Forms.MainForms.LessonRelatedForms;
-using Kinmori.Forms.MainForms.QuizForms
+using Kinmori.Forms.MainForms.QuizForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
