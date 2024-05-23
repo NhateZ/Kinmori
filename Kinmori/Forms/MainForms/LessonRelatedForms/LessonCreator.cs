@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,38 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
 {
     public partial class LessonCreator : Form
     {
+        static private readonly string[] printingSystem =
+        {
+            "NOT IMPLEMENTED",
+            "pvector",
+            "plist",
+            "pmap",
+            "pset",
+            "pdeque",
+            "pstack",
+            "pqueue",
+            "ppqueue"
+        };
         public LessonCreator()
         {
             InitializeComponent();
+            label5.Enabled = false;
+            textBoxSecondType.Enabled = false;
+            label5.Visible = false;
+            textBoxSecondType.Visible = false;
+            textBoxSecondType.Text = string.Empty;
+            label4.Enabled = false;
+            textBoxFirstType.Enabled = false;
+            label4.Visible = false;
+            textBoxFirstType.Visible = false;
+            textBoxFirstType.Text = string.Empty;
         }
         private List<command> commands = new List<command>();
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             List<Control> controls = new List<Control>
             {
-                label1, label2, label3, label4, label5, label6, label7,
+                label1, label2, label3, label6, label7,
                 textBoxAddB, textBoxCode, textBoxRemoveB, textBoxVariableName,
                 comboBoxTypeSelector,
                 buttonAddB, buttonRemoveB, buttonAddVariable
@@ -53,10 +75,10 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
                 string _command = $"b {line}";
                 commands.Add(new command(_command));
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Make sure you inserted a number!");
-            } 
+            }
         }
 
         private void buttonRemoveB_Click(object sender, EventArgs e)
@@ -72,23 +94,25 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
                 MessageBox.Show("Make sure you inserted a number!");
             }
         }
+
         private void buttonAddVariable_Click(object sender, EventArgs e)
         {
-
+            string _command = $"{printingSystem[comboBoxTypeSelector.SelectedIndex]} ";
         }
         private void buttonUpload_Click(object sender, EventArgs e)
         {
             // To Implement
+            throw new NotImplementedException();
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Example code - Enable it if you want an C++ sequence of code to be enabled\nAdd breakpoint - adds a breakpoint at a specified line\n Remove breakpointt - removes a breakpoint at a specified line\n Add variable watch - adds a watch on a specific variable that will be animated (if possible)");
+            MessageBox.Show("Example code - Enable it if you want an C++ sequence of code to be enabled\nAdd breakpoint - adds a breakpoint at a specified line\nRemove breakpointt - removes a breakpoint at a specified line\nAdd variable watch - adds a watch on a specific variable that will be animated (if possible)");
         }
 
         private void comboBoxTypeSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxTypeSelector.SelectedIndex == 2 || comboBoxTypeSelector.SelectedIndex == 3 || comboBoxTypeSelector.SelectedIndex == 4)
+            /*if (comboBoxTypeSelector.SelectedIndex == 2 || comboBoxTypeSelector.SelectedIndex == 3 || comboBoxTypeSelector.SelectedIndex == 4)
             {
                 label4.Enabled = true;
                 textBoxFirstType.Enabled = true;
@@ -101,6 +125,7 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
                 textBoxFirstType.Enabled = false;
                 label4.Visible = false;
                 textBoxFirstType.Visible = false;
+                textBoxFirstType.Text = string.Empty;
             }
             if (comboBoxTypeSelector.SelectedIndex == 3)
             {
@@ -112,10 +137,11 @@ namespace Kinmori.Forms.MainForms.LessonRelatedForms
             else
             {
                 label5.Enabled = false;
-                textBoxFirstType.Enabled = false;
+                textBoxSecondType.Enabled = false;
                 label5.Visible = false;
-                textBoxFirstType.Visible = false;
-            }
+                textBoxSecondType.Visible = false;
+                textBoxSecondType.Text = string.Empty;
+            }*/
         }
     }
 }
@@ -132,15 +158,4 @@ public class command
     {
         return this._command;
     }
-}
-public class variable
-{
-    public variable() { }
-    public variable(string _typename, string _nameofvariable) { this.typename = _typename; this.nameofvariable = _nameofvariable; }
-    private string typename;
-    private string nameofvariable;
-    public void SetTypename(string _typename) { this.typename = _typename; }
-    public string GetTypename(string _typename) { return this.typename;}
-    public void SetNameOfVariable(string _nameofvariable) { this.nameofvariable = _nameofvariable; }
-    public string GetNameOfVariable() { return this.nameofvariable;}
 }

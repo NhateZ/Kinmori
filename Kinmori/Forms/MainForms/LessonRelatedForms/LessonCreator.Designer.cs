@@ -49,6 +49,7 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
+            label8 = new Label();
             SuspendLayout();
             // 
             // textBoxLesson
@@ -187,7 +188,7 @@
             // comboBoxTypeSelector
             // 
             comboBoxTypeSelector.FormattingEnabled = true;
-            comboBoxTypeSelector.Items.AddRange(new object[] { "C-style array", "Vector", "List", "Map", "Set", "Deque", "Stack", "Queue", "Priority queue" });
+            comboBoxTypeSelector.Items.AddRange(new object[] { "- Not functional yet - C-style array", "Vector", "List", "Map", "Set", "Deque", "Stack", "Queue", "Priority queue" });
             comboBoxTypeSelector.Location = new Point(693, 226);
             comboBoxTypeSelector.Name = "comboBoxTypeSelector";
             comboBoxTypeSelector.Size = new Size(133, 23);
@@ -252,12 +253,22 @@
             label7.TabIndex = 21;
             label7.Text = "Variable name:";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(12, 6);
+            label8.Name = "label8";
+            label8.Size = new Size(69, 15);
+            label8.TabIndex = 22;
+            label8.Text = "Lesson text:";
+            // 
             // LessonCreator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1052, 450);
+            Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -309,5 +320,6 @@
         private Label label5;
         private Label label6;
         private Label label7;
+        private Label label8;
     }
 }
